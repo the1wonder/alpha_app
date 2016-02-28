@@ -1,1 +1,1 @@
-This is my repository for my first rails app alpha_app
+Adding new, edit, update, index, show, create, and destroy functionalities to alpha app

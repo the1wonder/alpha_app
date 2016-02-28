@@ -1,1 +1,1 @@
-Adding new, edit, update, index, show, create, and destroy functionalities to alpha app
+Adding bootstrap to alpha blog

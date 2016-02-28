@@ -36,6 +36,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
+  #gem 'libv8', '~> 3.16', '>= 3.16.14.13'
+
+  #gem 'execjs'
+
+  #gem 'therubyracer'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 end

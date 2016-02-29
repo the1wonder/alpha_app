@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
-    @article = Article.all
+    @articles = Article.all
   end
 
   def new
@@ -12,7 +12,7 @@ before_action :set_article, only: [:edit, :update, :show, :destroy]
   def create
       @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Successfully created..."
+      flash[:success] = "Successfully created..."
       redirect_to article_path(@article)
     else
       render 'new'
@@ -27,7 +27,7 @@ before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def update
       if @article.update(article_params)
-        flash[:notice] = "Successfully editted..."
+        flash[:success] = "Successfully editted..."
         redirect_to article_path(@article)
       else
         render 'edit'
@@ -36,13 +36,13 @@ before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def destroy
     @article.destroy
-    flash[:notice] = "Article was successfully deleted"
+    flash[:success] = "Article was successfully deleted"
     redirect_to articles_path
   end
 
   private
   def set_article
-  @article = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def article_params

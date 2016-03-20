@@ -8,6 +8,17 @@
         <li class="article-title">
           <%= link_to "#{category.name}", category_path(category) %>
         </li>
+        <div class="center">
+          <div class="article-actions">
+            <%if logged_in? && current_user.admin?%>
+              <li>
+                <%= link_to "Delete Category", category_path(category),method: :delete,
+                                                                              data: { confirm: "Are you sure you want to delete the category?"},
+                                                                              class: "btn btn-xs btn-danger" %>
+              </li>
+            <%end%>
+          </div>
+        </div>
         <li><small><%= pluralize(category.articles.count, "article") %></small></li>
       </div>
     </div>

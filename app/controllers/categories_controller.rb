@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:edit, :show, :update]
+  before_action :set_category, only: [:edit, :show, :update, :destroy]
   before_action :require_admin, except:[:index, :show]
 
   def index
@@ -34,7 +34,6 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
     @category.destroy
     flash[:success] = "your categroy successfully deletet"
     redirect_to categories_path
